@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation of my Experiments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hmx.css">
+    <meta name="description" content="Comprehensive documentation for enterprise technology implementations including SSH, Jupyter Notebook, Apache Tomcat, Ollama AI, and Hadoop">
+</head>
+<body>
+    <div class="content">
+        <div class="header glass-container">
+            <h1>Documentation of my Lab Experiments</h1>
+            <p>Welcome to my experimental laboratory where I document my hands-on journey through various technologies. Each experiment represents careful testing, implementation, and learning in a controlled Ubuntu environment, ensuring reproducible results and practical insights.</p>
+        </div>
+
+        <nav class="glass-container">
+            <ul class="nav-links">
+                <li><a href="#intro" class="button-hover-effect">Introduction</a></li>
+                <li><a href="#exp1" class="button-hover-effect">SSH Security</a></li>
+                <li><a href="#exp2" class="button-hover-effect">Jupyter Analysis</a></li>
+                <li><a href="#exp3" class="button-hover-effect">Tomcat Deployment</a></li>
+                <li><a href="#exp4" class="button-hover-effect">Ollama AI</a></li>
+                <li><a href="#exp5" class="button-hover-effect">Hadoop Processing</a></li>
+            </ul>
+        </nav>
+
+        <section id="intro" class="glass-container">
+            <h2>Introduction to Enterprise Technology Stack</h2>
+            <p>This comprehensive documentation portal is designed for IT professionals, developers, and system administrators seeking to implement secure, scalable, and robust technology solutions. Each experiment has been carefully crafted to provide a foundation for enterprise-grade implementations.</p>
+
+            <div class="progress-container">
+                <div class="progress-bar" data-progress="100"></div>
+            </div>
+
+            <p>The technologies covered in this documentation represent core components of modern IT infrastructure:</p>
+
+            <div class="tech-grid">
+                <div class="tech-card floating">
+                    <div class="tech-icon">🔒</div>
+                    <div class="tech-info">
+                        <h4>SSH</h4>
+                        <p>Secure remote access and administration</p>
+                    </div>
+                </div>
+
+                <div class="tech-card floating">
+                    <div class="tech-icon">📊</div>
+                    <div class="tech-info">
+                        <h4>Jupyter</h4>
+                        <p>Interactive data analysis and visualization</p>
+                    </div>
+                </div>
+
+                <div class="tech-card floating">
+                    <div class="tech-icon">🌐</div>
+                    <div class="tech-info">
+                        <h4>Tomcat</h4>
+                        <p>Java web application deployment</p>
+                    </div>
+                </div>
+
+                <div class="tech-card floating">
+                    <div class="tech-icon">🤖</div>
+                    <div class="tech-info">
+                        <h4>Ollama</h4>
+                        <p>Local AI model deployment and inference</p>
+                    </div>
+                </div>
+
+                <div class="tech-card floating">
+                    <div class="tech-icon">📦</div>
+                    <div class="tech-info">
+                        <h4>Hadoop</h4>
+                        <p>Distributed big data processing framework</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="important-note">
+                All experiments are designed to run on Ubuntu 22.04.5 LTS within an Oracle VirtualBox environment, ensuring consistency and reproducibility across different systems.
+            </div>
+
+            <div class="interactive-badges">
+                <span class="interactive-badge">VirtualBox 7.0</span>
+                <span class="interactive-badge">Ubuntu 22.04.5 LTS</span>
+                <span class="interactive-badge">OpenSSH 8.9</span>
+                <span class="interactive-badge">Jupyter Notebook 6.5.2</span>
+                <span class="interactive-badge">Apache Tomcat 10.1.36</span>
+                <span class="interactive-badge">Ollama 0.1.13</span>
+                <span class="interactive-badge">Hadoop 3.4.0</span>
+            </div>
+        </section>
+
+        <section id="exp1" class="glass-container">
+            <h2>Experiment 1: Enterprise-Grade SSH Implementation</h2>
+            <div class="exp-content">
+                <div class="exp-intro">
+                    <p>Secure Shell (SSH) is a cryptographic network protocol that provides a secure channel over an unsecured network. It allows for secure remote login, command execution, and file transfers between networked machines.</p>
+                    <p>In enterprise environments, SSH is the backbone of secure infrastructure management, allowing administrators to securely access and manage production servers, cloud instances, and network devices.</p>
+
+                    <div class="terminal-header">
+                        <div class="terminal-circle red"></div>
+                        <div class="terminal-circle yellow"></div>
+                        <div class="terminal-circle green"></div>
+                        <div class="terminal-title">ssh-connection.sh</div>
+                    </div>
+                    <div class="code-block terminal">
+                        <pre><code class="typing-effect">$ ssh-keygen -t ed25519 -C "admin@enterprise.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/user/.ssh/id_ed25519): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/user/.ssh/id_ed25519
+Your public key has been saved in /home/user/.ssh/id_ed25519.pub</code></pre>
+                    </div>
+                </div>
+
+                <div class="exp-steps">
+                    <h3>Installing OpenSSH Server and Client</h3>
+                    <p>The OpenSSH implementation is the industry standard for secure remote access. Begin by installing both server and client components:</p>
+
+                    <div class="command-demo">
+                        <div class="command-input">
+                            <span class="prompt-symbol">$</span>
+                            <input type="text" class="command-text" value="sudo apt update && sudo apt install openssh-server -y" readonly>
+                            <button class="run-command">Run</button>
+                        </div>
+                        <div class="command-output"></div>
+                    </div>
+
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo apt update
+sudo apt install openssh-server -y
+sudo systemctl enable ssh
+sudo systemctl start ssh
+sudo systemctl status ssh</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>The commands above perform the following operations:</p>
+                    <ul>
+                        <li>Update your system's package repository information</li>
+                        <li>Install the OpenSSH server package</li>
+                        <li>Configure the SSH service to start automatically at boot time</li>
+                        <li>Start the SSH service immediately</li>
+                        <li>Verify the service is running correctly</li>
+                    </ul>
+
+                    <h3>Network Identification and Connectivity</h3>
+                    <p>To establish a connection, you'll need to identify your system's IP address:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code># Display all network interfaces and their IP addresses
+ip a
+
+# Alternative command to show only IP addresses
+hostname -I</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Establishing Secure Connections</h3>
+                    <p>Once the server is configured, you can connect from another machine using:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>ssh username@ip-address</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+                    <p>The first time you connect to a new server, you'll be prompted to verify the host's authenticity by accepting its fingerprint. This is a critical security step to prevent <span class="tooltip">man-in-the-middle attacks<span class="tooltiptext">An attack where an attacker secretly relays and possibly alters communication between two parties who believe they are directly communicating with each other.</span></span>.</p>
+
+                    <h3>Implementing Enhanced Security Measures</h3>
+                    <p>For enterprise environments, implement these critical security enhancements:</p>
+
+                    <h4>Key-Based Authentication</h4>
+                    <p>Eliminate password vulnerabilities by implementing key-based authentication:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code># Generate a secure 4096-bit RSA key
+ssh-keygen -t rsa -b 4096 -C "username@company.com"
+
+# Copy public key to the remote server
+ssh-copy-id username@ip-address
+
+# Test passwordless authentication
+ssh username@ip-address</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h4>Hardening SSH Configuration</h4>
+                    <p>Edit the SSH server configuration to enhance security:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo nano /etc/ssh/sshd_config</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Recommended security settings:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code># Disable root login
+PermitRootLogin no
+
+# Use a non-standard port
+Port 2222
+
+# Disable password authentication
+PasswordAuthentication no
+
+# Limit authentication attempts
+MaxAuthTries 3
+
+# Restrict SSH protocol version
+Protocol 2
+
+# Set idle timeout (in seconds)
+ClientAliveInterval 300
+ClientAliveCountMax 2</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>After making changes, restart the SSH service:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo systemctl restart ssh</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <div class="important-note">
+                        When changing the SSH port or disabling password authentication, ensure you have an alternate way to access the system in case of configuration errors. Always keep a session open when testing SSH configuration changes.
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" data-progress="85"></div>
+            </div>
+        </section>
+
+        <section id="exp2" class="glass-container">
+            <h2>Experiment 2: Data Analysis Environment with Jupyter Notebook</h2>
+            <div class="exp-content">
+                <div class="exp-intro">
+                    <p>Jupyter Notebook provides an interactive computing environment that enables data scientists, analysts, and researchers to create and share documents containing live code, equations, visualizations, and narrative text.</p>
+                    <p>In enterprise settings, Jupyter serves as a critical tool for data exploration, model development, visualization, and collaborative analysis. This experiment outlines a production-ready Jupyter implementation with remote access capabilities and security enhancements.</p>
+
+                    <div class="terminal-header">
+                        <div class="terminal-circle red"></div>
+                        <div class="terminal-circle yellow"></div>
+                        <div class="terminal-circle green"></div>
+                        <div class="terminal-title">jupyter-server.log</div>
+                    </div>
+                    <div class="code-block terminal">
+                        <pre><code>[I 2023-06-21 14:25:09.168 ServerApp] Jupyter Server 2.5.0 is running at:
+[I 2023-06-21 14:25:09.168 ServerApp] http://localhost:8888/lab
+[I 2023-06-21 14:25:09.168 ServerApp]  or http://127.0.0.1:8888/lab
+[I 2023-06-21 14:25:09.168 ServerApp] Use Control-C to stop this server
+[I 2023-06-21 14:25:09.170 ServerApp] Welcome to Project Jupyter!</code></pre>
+                    </div>
+
+                    <div class="interactive-badges">
+                        <span class="interactive-badge">Python 3.10+</span>
+                        <span class="interactive-badge">NumPy</span>
+                        <span class="interactive-badge">Pandas</span>
+                        <span class="interactive-badge">Matplotlib</span>
+                        <span class="interactive-badge">Scikit-learn</span>
+                    </div>
+                </div>
+
+                <div class="exp-steps">
+                    <h3>Installing Python and Dependencies</h3>
+                    <p>Begin by setting up the Python environment that will host Jupyter:</p>
+
+                    <div class="command-demo">
+                        <div class="command-input">
+                            <span class="prompt-symbol">$</span>
+                            <input type="text" class="command-text" value="sudo apt install python3 python3-pip python3-dev -y" readonly>
+                            <button class="run-command">Run</button>
+                        </div>
+                        <div class="command-output"></div>
+                    </div>
+
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo apt update
+sudo apt install python3 -y
+sudo apt install python3-pip -y
+sudo apt install python3-dev -y</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Installing Jupyter and Essential Data Science Libraries</h3>
+                    <p>Install Jupyter and common data science packages:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code># Install Jupyter
+pip3 install notebook jupyterlab
+
+# Install essential data science packages
+pip3 install numpy pandas matplotlib scikit-learn seaborn plotly</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Configuring Remote Access</h3>
+                    <p>To enable secure remote access, configure Jupyter to accept connections from external IP addresses:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code># Generate configuration file
+jupyter notebook --generate-config
+
+# Set a secure password
+jupyter notebook password</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>You'll be prompted to create and confirm a password. This password will be required when accessing your Jupyter server remotely.</p>
+
+                    <h3>Customizing Jupyter Configuration</h3>
+                    <p>Modify the Jupyter configuration file to enable remote access with enhanced security:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>nano ~/.jupyter/jupyter_notebook_config.py</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Add or modify these settings:</p>
+                    <div class="code-block" data-language="python">
+                        <pre><code># Allow all IP addresses
+c.NotebookApp.ip = '0.0.0.0'
+
+# Don't open browser automatically
+c.NotebookApp.open_browser = False
+
+# Set the port
+c.NotebookApp.port = 8888
+
+# Use HTTPS
+c.NotebookApp.certfile = '/home/username/ssl/mycert.pem'
+c.NotebookApp.keyfile = '/home/username/ssl/mykey.key'
+
+# Configure authentication
+c.NotebookApp.password_required = True
+
+# Set notebook autosave interval in seconds
+c.FileContentsManager.autosave_interval = 120</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Creating SSL Certificates for HTTPS</h3>
+                    <p>For secure HTTPS connections, generate self-signed SSL certificates:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>mkdir -p ~/ssl
+cd ~/ssl
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Running Jupyter as a Background Service</h3>
+                    <p>For production environments, create a systemd service to run Jupyter in the background:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo nano /etc/systemd/system/jupyter.service</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Add the following configuration:</p>
+                    <div class="code-block" data-language="ini">
+                        <pre><code>[Unit]
+Description=Jupyter Notebook Server
+After=network.target
+
+[Service]
+Type=simple
+User=username
+ExecStart=/usr/local/bin/jupyter notebook --config=/home/username/.jupyter/jupyter_notebook_config.py
+WorkingDirectory=/home/username/notebooks
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <div class="command-demo">
+                        <div class="command-input">
+                            <span class="prompt-symbol">$</span>
+                            <input type="text" class="command-text" value="sudo systemctl start jupyter && sudo systemctl enable jupyter" readonly>
+                            <button class="run-command">Run</button>
+                        </div>
+                        <div class="command-output"></div>
+                    </div>
+
+                    <h3>Configuring Firewall Access</h3>
+                    <p>Allow traffic to the Jupyter port:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo ufw allow 8888</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Accessing Jupyter Remotely</h3>
+                    <p>Access your Jupyter server from another machine by navigating to:</p>
+                    <div class="code-block" data-language="url">
+                        <pre><code>https://server-ip-address:8888</code></pre>
+                    </div>
+
+                    <div class="important-note">
+                        For production environments with sensitive data, consider additional security measures such as implementing a VPN, restricting IP ranges, or using an authentication proxy. Regularly update libraries to mitigate security vulnerabilities.
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" data-progress="90"></div>
+            </div>
+        </section>
+
+        <section id="exp3" class="glass-container">
+            <h2>Experiment 3: Enterprise Web Application Deployment with Apache Tomcat</h2>
+            <div class="exp-content">
+                <div class="exp-intro">
+                    <p>Apache Tomcat is a robust, production-grade web server and servlet container that provides a "pure Java" HTTP web server environment for running Java applications. It implements several Java EE specifications including Java Servlet, JavaServer Pages (JSP), and WebSocket.</p>
+                    <p>In enterprise environments, Tomcat is commonly used to host business-critical applications, REST APIs, and microservices. This experiment outlines a comprehensive setup with security hardening and performance optimization suitable for production use.</p>
+
+                    <div class="interactive-badges">
+                        <span class="interactive-badge">Tomcat 10.1.36</span>
+                        <span class="interactive-badge">Java 11</span>
+                        <span class="interactive-badge">Servlet 5.0</span>
+                        <span class="interactive-badge">JSP 3.0</span>
+                    </div>
+                </div>
+
+                <div class="exp-steps">
+                    <h3>Installing Java Development Kit</h3>
+                    <p>Tomcat requires a Java Development Kit (JDK) to function. Install OpenJDK 11:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo apt update
+sudo apt install openjdk-11-jdk -y
+
+# Verify installation
+java --version</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Creating a Dedicated Tomcat User</h3>
+                    <p>For enhanced security, create a dedicated non-privileged user for running Tomcat:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo groupadd tomcat
+sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Downloading and Installing Apache Tomcat</h3>
+                    <p>Download and extract the latest stable version of Tomcat:</p>
+                    <div class="command-demo">
+                        <div class="command-input">
+                            <span class="prompt-symbol">$</span>
+                            <input type="text" class="command-text" value="cd /tmp && wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.36/bin/apache-tomcat-10.1.36.tar.gz" readonly>
+                            <button class="run-command">Run</button>
+                        </div>
+                        <div class="command-output"></div>
+                    </div>
+
+                    <div class="code-block" data-language="bash">
+                        <pre><code>cd /tmp
+wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.36/bin/apache-tomcat-10.1.36.tar.gz
+sudo mkdir -p /opt/tomcat
+sudo tar -xzvf apache-tomcat-10.1.36.tar.gz -C /opt/tomcat --strip-components=1</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Setting Appropriate Permissions</h3>
+                    <p>Configure directory permissions for secure operation:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>cd /opt/tomcat
+sudo chgrp -R tomcat /opt/tomcat
+sudo chmod -R g+r conf
+sudo chmod g+x conf
+sudo chown -R tomcat webapps/ work/ temp/ logs/
+sudo chmod +x /opt/tomcat/bin/*.sh</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Creating a Systemd Service for Tomcat</h3>
+                    <p>Create a systemd service file to manage Tomcat as a service:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo nano /etc/systemd/system/tomcat.service</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Add the following configuration:</p>
+                    <div class="code-block" data-language="ini">
+                        <pre><code>[Unit]
+Description=Apache Tomcat Web Application Container
+After=network.target
+
+[Service]
+Type=forking
+
+Environment="JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64"
+Environment="CATALINA_PID=/opt/tomcat/temp/tomcat.pid"
+Environment="CATALINA_HOME=/opt/tomcat"
+Environment="CATALINA_BASE=/opt/tomcat"
+Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
+Environment="JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom"
+
+ExecStart=/opt/tomcat/bin/startup.sh
+ExecStop=/opt/tomcat/bin/shutdown.sh
+
+User=tomcat
+Group=tomcat
+UMask=0007
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Starting and Enabling Tomcat Service</h3>
+                    <p>Start Tomcat and enable it to launch at boot:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo systemctl daemon-reload
+sudo systemctl start tomcat
+sudo systemctl enable tomcat
+sudo systemctl status tomcat</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Deploying a Sample Web Application</h3>
+                    <p>Deploy a web application by creating the application directory structure:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo mkdir -p /opt/tomcat/webapps/myapp/WEB-INF</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Create a simple web page:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo nano /opt/tomcat/webapps/myapp/index.html</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Add HTML content:</p>
+                    <div class="code-block" data-language="html">
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Enterprise Application&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Enterprise Application Deployed Successfully!&lt;/h1&gt;
+        &lt;p&gt;This page confirms that Tomcat is working correctly.&lt;/p&gt;
+        &lt;p&gt;Server Information:&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Tomcat Version: 10.1.36&lt;/li&gt;
+            &lt;li&gt;Java Version: &lt;%= System.getProperty("java.version") %&gt;&lt;/li&gt;
+            &lt;li&gt;Operating System: &lt;%= System.getProperty("os.name") %&gt; &lt;%= System.getProperty("os.version") %&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <div class="important-note">
+                        For production environments, consider implementing HTTPS by configuring Tomcat with SSL certificates, either directly or behind a reverse proxy like Nginx or Apache.
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" data-progress="95"></div>
+            </div>
+        </section>
+
+        <section id="exp4" class="glass-container">
+            <h2>Experiment 4: Local AI Model Deployment with Ollama</h2>
+            <div class="exp-content">
+                <div class="exp-intro">
+                    <h3>Overview</h3>
+                    <p>Ollama is a powerful framework that allows you to run large language models (LLMs) locally. This capability enables organizations to maintain control over their data while leveraging advanced AI capabilities for content generation, knowledge extraction, and custom applications.</p>
+                    <p>This experiment demonstrates how to deploy, customize, and integrate open-source large language models into your enterprise environment, providing a secure alternative to cloud-based AI services.</p>
+
+                    <div class="terminal-header">
+                        <div class="terminal-circle red"></div>
+                        <div class="terminal-circle yellow"></div>
+                        <div class="terminal-circle green"></div>
+                        <div class="terminal-title">ollama-chat.log</div>
+                    </div>
+                    <div class="code-block terminal">
+                        <pre><code>> How can I securely implement SSH in an enterprise environment?
+
+SSH (Secure Shell) implementation in enterprise environments requires several security considerations:
+
+1. Key-based authentication: Disable password authentication and use SSH keys with passphrases.
+2. Non-standard ports: Change from default port 22 to reduce automated attacks.
+3. Restricted user access: Implement least privilege principle with specific users.
+4. Two-factor authentication: Add an extra layer of security beyond keys.
+5. Regular updates: Keep SSH software and configurations updated.
+6. Firewall rules: Restrict SSH access to specific IP ranges.
+7. Jump servers: Implement centralized access points for better auditing.
+8. Session timeouts: Configure automatic disconnection for idle sessions.
+9. Failed login limits: Implement account lockouts after multiple failures.
+10. Logging and monitoring: Track all authentication attempts.
+
+For implementation, I recommend updating /etc/ssh/sshd_config with:
+```
+PasswordAuthentication no
+PermitRootLogin no
+Protocol 2
+MaxAuthTries 5
+ClientAliveInterval 300
+ClientAliveCountMax 0
+```</code></pre>
+                    </div>
+                </div>
+
+                <div class="exp-steps">
+                    <h3>Installing Prerequisites</h3>
+                    <p>Install essential packages for Ollama deployment:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo apt update
+sudo apt install git curl build-essential -y</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Installing Ollama</h3>
+                    <p>Download and install Ollama using the official installation script:</p>
+                    <div class="command-demo">
+                        <div class="command-input">
+                            <span class="prompt-symbol">$</span>
+                            <input type="text" class="command-text" value="curl -fsSL https://ollama.com/install.sh | sh" readonly>
+                            <button class="run-command">Run</button>
+                        </div>
+                        <div class="command-output"></div>
+                    </div>
+
+                    <h3>Verifying the Installation</h3>
+                    <p>Verify that Ollama is running correctly:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>ollama --version</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Running Pre-trained Language Models</h3>
+                    <p>Ollama provides access to various pre-trained models. Download and run a lightweight model like Llama3:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code># Download and run the 2.1B parameter version of Llama3
+ollama run llama3:2.1b</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>The first time you run this command, Ollama will download the model. Once downloaded, you'll enter an interactive chat session where you can communicate with the AI model.</p>
+
+                    <h3>Managing Available Models</h3>
+                    <p>List and manage your installed models:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code># List available models
+ollama list
+
+# Pull a model without running it
+ollama pull tinyllama
+
+# Remove a model
+ollama rm llama3:2.1b</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Creating Custom AI Models</h3>
+                    <p>Create specialized models tailored to your enterprise needs using a Modelfile:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>mkdir -p ~/ollama-models
+cd ~/ollama-models
+nano Modelfile</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Define your custom model specifications:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>FROM llama3:2.1
+PARAMETER temperature 0.7
+PARAMETER top_p 0.9
+PARAMETER top_k 40
+SYSTEM """
+You are a helpful enterprise assistant specialized in technology documentation.
+Always provide accurate, concise information with practical examples.
+Prioritize security best practices in your responses.
+Format code examples clearly with appropriate syntax highlighting.
+"""</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Build your custom model:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>ollama create tech-assistant -f ./Modelfile</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Setting Up the Ollama API Server</h3>
+                    <p>For integration with applications, run Ollama as an API server:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>ollama serve</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>The API server runs on port 11434 by default. You can interact with it using HTTP requests:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>curl -X POST http://localhost:11434/api/generate -d '{
+  "model": "tech-assistant",
+  "prompt": "What are the best practices for SSH security?",
+  "stream": false
+}'</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Creating a Systemd Service for Ollama</h3>
+                    <p>For production use, create a systemd service to run Ollama in the background:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo nano /etc/systemd/system/ollama.service</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Configure the service:</p>
+                    <div class="code-block" data-language="ini">
+                        <pre><code>[Unit]
+Description=Ollama AI Model Server
+After=network.target
+
+[Service]
+User=username
+ExecStart=/usr/local/bin/ollama serve
+Restart=always
+RestartSec=10
+Environment="OLLAMA_MODELS=/home/username/ollama-models"
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <div class="important-note">
+                        For production environments, consider implementing additional security measures such as running Ollama behind a reverse proxy with TLS/SSL, implementing authentication, and restricting access to authorized IP addresses only.
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" data-progress="88"></div>
+            </div>
+        </section>
+
+        <section id="exp5" class="glass-container">
+            <h2>Experiment 5: Distributed Data Processing with Hadoop</h2>
+            <div class="exp-content">
+                <div class="exp-intro">
+                    <h3>Overview</h3>
+                    <p>Apache Hadoop is an open-source framework that allows for distributed processing of large data sets across clusters of computers. It is designed to scale up from single servers to thousands of machines, offering local computation and storage.</p>
+                    <p>This experiment demonstrates how to set up a Hadoop environment suitable for enterprise big data processing, including HDFS (Hadoop Distributed File System) for storage and YARN (Yet Another Resource Negotiator) for resource management.</p>
+
+                    <div class="interactive-badges">
+                        <span class="interactive-badge">HDFS</span>
+                        <span class="interactive-badge">YARN</span>
+                        <span class="interactive-badge">MapReduce</span>
+                        <span class="interactive-badge">Hadoop 3.4.0</span>
+                        <span class="interactive-badge">Java 11</span>
+                    </div>
+
+                    <div class="terminal-header">
+                        <div class="terminal-circle red"></div>
+                        <div class="terminal-circle yellow"></div>
+                        <div class="terminal-circle green"></div>
+                        <div class="terminal-title">hadoop-cluster.log</div>
+                    </div>
+                    <div class="code-block terminal">
+                        <pre><code>Starting namenodes on [localhost]
+Starting datanodes
+Starting secondary namenodes
+Starting resourcemanager
+Starting nodemanagers
+
+$ jps
+7543 NameNode
+7892 SecondaryNameNode
+8157 ResourceManager
+8259 NodeManager
+7707 DataNode
+8463 Jps</code></pre>
+                    </div>
+                </div>
+
+                <div class="exp-steps">
+                    <h3>Installing Java Development Kit</h3>
+                    <p>Hadoop requires Java to function. Install OpenJDK:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo apt update
+sudo apt install openjdk-11-jdk -y
+
+# Verify installation
+java -version</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Creating a Dedicated Hadoop User</h3>
+                    <p>Create a dedicated user for Hadoop operations to enhance security and separation of concerns:</p>
+                    <div class="command-demo">
+                        <div class="command-input">
+                            <span class="prompt-symbol">$</span>
+                            <input type="text" class="command-text" value="sudo adduser hadoop" readonly>
+                            <button class="run-command">Run</button>
+                        </div>
+                        <div class="command-output"></div>
+                    </div>
+
+                    <h3>Configuring SSH for Hadoop User</h3>
+                    <p>Set up passwordless SSH for the Hadoop user, which is required for Hadoop services to communicate:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code># Switch to hadoop user
+sudo su - hadoop
+
+# Generate SSH keys without passphrase
+ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+
+# Add key to authorized keys
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 0600 ~/.ssh/authorized_keys
+
+# Test SSH connection (should not prompt for password)
+ssh localhost
+exit  # Exit the test connection
+
+# Exit hadoop user session when done
+exit</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Downloading and Extracting Hadoop</h3>
+                    <p>Download and extract the latest stable version of Hadoop:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code># Switch to hadoop user
+sudo su - hadoop
+
+# Download Hadoop
+wget https://downloads.apache.org/hadoop/common/hadoop-3.4.0/hadoop-3.4.0.tar.gz
+
+# Extract the archive
+tar -xzvf hadoop-3.4.0.tar.gz
+
+# Rename for convenience
+mv hadoop-3.4.0 hadoop
+
+# Exit hadoop user session when done
+exit</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Configuring Core Hadoop Files</h3>
+                    <p>Configure essential Hadoop configuration files:</p>
+
+                    <h4>1. Setting Environment Variables</h4>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>sudo su - hadoop
+nano ~/.bashrc</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Add these environment variables to the end of the file:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code># Hadoop Environment Variables
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export HADOOP_HOME=/home/hadoop/hadoop
+export HADOOP_INSTALL=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export YARN_HOME=$HADOOP_HOME
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <div class="code-block" data-language="bash">
+                        <pre><code># Apply the changes
+source ~/.bashrc</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h4>2. Configuring hadoop-env.sh</h4>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Set the JAVA_HOME variable by adding or updating:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h4>3. Configuring core-site.xml</h4>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>nano $HADOOP_HOME/etc/hadoop/core-site.xml</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Add these configuration properties:</p>
+                    <div class="code-block" data-language="xml">
+                        <pre><code>&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;fs.defaultFS&lt;/name&gt;
+        &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+        &lt;value&gt;/home/hadoop/hadoop_tmp&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h4>4. Configuring hdfs-site.xml</h4>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>nano $HADOOP_HOME/etc/hadoop/hdfs-site.xml</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Add these configuration properties:</p>
+                    <div class="code-block" data-language="xml">
+                        <pre><code>&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;dfs.replication&lt;/name&gt;
+        &lt;value&gt;1&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;
+        &lt;value&gt;/home/hadoop/hadoop_data/hdfs/namenode&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;
+        &lt;value&gt;/home/hadoop/hadoop_data/hdfs/datanode&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h4>5. Configuring mapred-site.xml</h4>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>nano $HADOOP_HOME/etc/hadoop/mapred-site.xml</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Add these configuration properties:</p>
+                    <div class="code-block" data-language="xml">
+                        <pre><code>&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+        &lt;value&gt;yarn&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;mapreduce.application.classpath&lt;/name&gt;
+        &lt;value&gt;$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h4>6. Configuring yarn-site.xml</h4>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>nano $HADOOP_HOME/etc/hadoop/yarn-site.xml</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <p>Add these configuration properties:</p>
+                    <div class="code-block" data-language="xml">
+                        <pre><code>&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+        &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.nodemanager.aux-services.mapreduce.shuffle.class&lt;/name&gt;
+        &lt;value&gt;org.apache.hadoop.mapred.ShuffleHandler&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.nodemanager.env-whitelist&lt;/name&gt;
+        &lt;value&gt;JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Creating Data Directories</h3>
+                    <p>Create the necessary directories for HDFS data:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code>mkdir -p ~/hadoop_tmp
+mkdir -p ~/hadoop_data/hdfs/namenode
+mkdir -p ~/hadoop_data/hdfs/datanode</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Formatting the HDFS Namenode</h3>
+                    <p>Format the HDFS namenode (only do this once):</p>
+                    <div class="command-demo">
+                        <div class="command-input">
+                            <span class="prompt-symbol">$</span>
+                            <input type="text" class="command-text" value="hdfs namenode -format" readonly>
+                            <button class="run-command">Run</button>
+                        </div>
+                        <div class="command-output"></div>
+                    </div>
+
+                    <h3>Starting Hadoop Services</h3>
+                    <p>Start the Hadoop DFS and YARN services:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code># Start HDFS services
+start-dfs.sh
+
+# Start YARN services
+start-yarn.sh
+
+# Verify running services
+jps</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Accessing Hadoop Web Interfaces</h3>
+                    <p>Hadoop provides web interfaces for monitoring and management:</p>
+                    <ul>
+                        <li>HDFS NameNode: <code>http://localhost:9870</code></li>
+                        <li>YARN ResourceManager: <code>http://localhost:8088</code></li>
+                        <li>MapReduce JobHistory Server: <code>http://localhost:19888</code></li>
+                    </ul>
+
+                    <h3>Running a Sample MapReduce Job</h3>
+                    <p>Create a sample text file for processing and run a WordCount job:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code># Create a sample text file
+mkdir -p ~/hadoop_files
+cat > ~/hadoop_files/sample.txt << EOF
+Apache Hadoop is an open-source framework for distributed storage and processing of big data sets.
+Hadoop provides a distributed file system and a framework for the analysis and transformation of very large data sets.
+The core components of Apache Hadoop consist of HDFS, YARN, and MapReduce.
+Hadoop enables businesses to process massive amounts of structured and unstructured data efficiently.
+Hadoop clusters can scale horizontally by adding more commodity hardware nodes to the cluster.
+EOF
+
+# Create directory in HDFS
+hdfs dfs -mkdir -p /user/hadoop/input
+
+# Upload the file to HDFS
+hdfs dfs -put ~/hadoop_files/sample.txt /user/hadoop/input/
+
+# Run the example WordCount MapReduce job
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.4.0.jar wordcount /user/hadoop/input /user/hadoop/output
+
+# View the results
+hdfs dfs -cat /user/hadoop/output/part-r-00000</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Basic HDFS File Operations</h3>
+                    <p>Here are some common HDFS file operations:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code># List files in HDFS
+hdfs dfs -ls /user/hadoop
+
+# Make a new directory in HDFS
+hdfs dfs -mkdir /user/hadoop/new_directory
+
+# Copy a file from local filesystem to HDFS
+hdfs dfs -put localfile.txt /user/hadoop/
+
+# Copy a file from HDFS to local filesystem
+hdfs dfs -get /user/hadoop/remotefile.txt ./
+
+# View the content of a file in HDFS
+hdfs dfs -cat /user/hadoop/file.txt
+
+# Remove a file or directory in HDFS
+hdfs dfs -rm /user/hadoop/file.txt
+hdfs dfs -rm -r /user/hadoop/directory</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <h3>Stopping Hadoop Services</h3>
+                    <p>When you're done working with Hadoop, you can stop the services:</p>
+                    <div class="code-block" data-language="bash">
+                        <pre><code># Stop YARN services
+stop-yarn.sh
+
+# Stop HDFS services
+stop-dfs.sh</code></pre>
+                        <button class="copy-button">Copy</button>
+                    </div>
+
+                    <div class="important-note">
+                        For production environments, consider setting up a multi-node Hadoop cluster with proper security configurations, including Kerberos authentication, encrypted data transfer, and detailed access control policies. Also implement monitoring solutions like Prometheus/Grafana or the Hadoop-native tools for cluster health tracking.
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" data-progress="92"></div>
+            </div>
+        </section>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3 id="modal-title">Title</h3>
+                <div id="modal-content">Content</div>
+            </div>
+        </div>
+
+        <footer class="glass-container">
+            <p>Developed for enterprise technology implementation reference • Comprehensive documentation for experimental technologies</p>
+            <p>© 2024 Enterprise Technology Research Lab</p>
+        </footer>
+    </div>
+
+    <script src="hmx.js"></script>
+</body>
+</html>
